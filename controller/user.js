@@ -20,7 +20,7 @@ async function updateUserById(req, res) {
 }
 async function deleteUserById(req, res) {
   const user = await User.findById(req.params.id);
-  await User.findByIdAndDelete(user);
+  await User.findByIdAndDelete(req.params.id);
   return res.json({ status: "success" });
 }
 async function createUser(req, res) {
