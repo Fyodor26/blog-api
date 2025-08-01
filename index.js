@@ -12,7 +12,10 @@ connectDB("mongodb://127.0.0.1:27017/blog-api")
   .catch((err) => {
     console.log(err);
   });
-
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

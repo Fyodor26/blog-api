@@ -15,11 +15,11 @@ async function getUserById(req, res) {
 async function updateUserById(req, res) {
   const user = await User.findById(req.params.id);
   const body = req.body;
-  await User.findByIdAndUpdate(user, { lastName: "changed" });
+  await User.findByIdAndUpdate(req.params.id, { lastName: "changed" });
   return res.json({ status: "success" });
 }
 async function deleteUserById(req, res) {
-  // const user = await User.findById(req.params.id);
+  const user = await User.findById(req.params.id);
   await User.findByIdAndDelete(user);
   return res.json({ status: "success" });
 }
