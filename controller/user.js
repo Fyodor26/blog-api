@@ -1,8 +1,13 @@
 const User = require("../models/user");
 
 async function getAllUsers(req, res) {
-  const alldbusers = await User.find({});
-  res.send(alldbusers);
+  try {
+    const alldbusers = await User.find({});
+    res.send(alldbusers);
+  } catch (err) {
+    console.error("❌ Error in getAllUsers:", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 }
 
 async function getUserById(req, res) {
