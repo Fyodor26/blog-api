@@ -1,0 +1,17 @@
+{
+  "name": "blogexpress",
+  "version": "1.0.0",
+  "description": "This is a blog we created",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Nakul",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.17.0"
+  }
+}
