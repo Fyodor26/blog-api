@@ -1,10 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const userRouter = require("./routes/user");
 const app = express();
 const port = process.env.PORT || 3000;
 const fs = require("fs");
 const { connectDB } = require("./connection");
-require("dotenv").config();
 
 connectDB(process.env.MONGO_URI)
   .then(() => {
