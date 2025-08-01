@@ -19,7 +19,7 @@ async function updateUserById(req, res) {
   return res.json({ status: "success" });
 }
 async function deleteUserById(req, res) {
-  const user = await User.findById(req.params.id);
+  // const user = await User.findById(req.params.id);
   await User.findByIdAndDelete(user);
   return res.json({ status: "success" });
 }
