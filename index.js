@@ -1,11 +1,12 @@
 const express = require("express");
 const userRouter = require("./routes/user");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const fs = require("fs");
 const { connectDB } = require("./connection");
+require("dotenv").config();
 
-connectDB("mongodb://127.0.0.1:27017/blog-api")
+connectDB(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
   })
